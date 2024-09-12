@@ -21,4 +21,20 @@ public class RegisterRepository : IRegisterRepository
         _registerDbcontext.Registers.Add(register);
         await _registerDbcontext.SaveChangesAsync();
     }
+    public async Task UpdateRegister(Registers register)
+    {
+        _registerDbcontext.Registers.Update(register);
+        await _registerDbcontext.SaveChangesAsync();
+    }
+    public async Task<bool> DeleteRegisterById(int id)
+    {
+        Registers? register = await _registerDbcontext.Registers.FindAsync(id);
+        if (register == null)
+        {
+            return false;
+        }
+        _registerDbcontext.Registers.Remove(register);
+        await _registerDbcontext.SaveChangesAsync();
+        return true;
+    }
 }

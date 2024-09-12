@@ -18,4 +18,12 @@ public class RegisterService : IRegisterService
     {
         await _registerRepository.CreateRegister(register);
     }
+    public async Task UpdateRegister(Registers register)
+    {
+        await _registerRepository.UpdateRegister(register);
+    }
+    public async Task<bool> DeleteRegisterById(int id)
+    {
+        return await _registerRepository.DeleteRegisterById(id);
+    }
 }

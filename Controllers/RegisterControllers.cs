@@ -24,4 +24,23 @@ public class RegisterControllers: ControllerBase
         await _registerService.CreateRegister(register);
         return Ok(register);
     }
+    [HttpPatch]
+    public async Task<IActionResult> UpdateRegister(Registers register)
+    {
+        await _registerService.UpdateRegister(register);
+        return Ok(register);
+    }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteRegisterById(int id)
+    {
+        bool success = await _registerService.DeleteRegisterById(id);
+        if (success)
+        {
+            return NoContent();
+        }
+        else
+        {
+            return NotFound();
+        }
+    }
 }
