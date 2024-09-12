@@ -1,0 +1,12 @@
+{
+  "register": [
+    {
+      "firstName": "P",
+      "lastName": "Petch",
+      "birthday": "25-08-2001",
+      "gender": "male",
+      "email": "petch@gmail.com",
+      "phone": "0983201104"
+    }
+  ]
+}
