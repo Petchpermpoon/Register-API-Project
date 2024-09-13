@@ -10,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IRegisterService, RegisterService>();
 builder.Services.AddScoped<IRegisterRepository, RegisterRepository>();
-builder.Services.AddDbContext<RegisterDbConntext>(options => options.UseMySql("Server=localhost;Database=registerDb;User=root;Password=password;",
+builder.Services.AddDbContext<RegisterDbConntext>(options => options.UseMySql("Server=13.237.137.147;Database=registerDb;User=tnt;Password=tnt@odds;",
 new MySqlServerVersion(new Version(8, 0, 29))));
 
 var app = builder.Build();
