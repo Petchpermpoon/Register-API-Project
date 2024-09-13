@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Register.API.Models;
 
@@ -11,9 +12,11 @@ using Register.API.Models;
 namespace register_api_project.Migrations
 {
     [DbContext(typeof(RegisterDbConntext))]
-    partial class RegisterDbConntextModelSnapshot : ModelSnapshot
+    [Migration("20240913065332_addcolumns")]
+    partial class addcolumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
